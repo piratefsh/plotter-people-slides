@@ -1,0 +1,65 @@
+/**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is darkblue.
+ *
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: 'Roboto', sans-serif;
+$mainColor: #fff;
+$headingFont: 'Roboto', Helvetica, Arial, sans-serif;
+$headingColor: #fff;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: hsl(330, 60%, 45%);
+$linkColor: #fff;
+$linkTextDecoration: underline;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+$heading1Size: 2.8em;
+$heading2Color: rgb(107, 90, 166);
+$headingTextTransform: uppercase;
+$headingFontWeight: 700;
+
+@mixin bodyBackground() {
+  background: $backgroundColor;
+}
+
+section.has-dark-background {
+  &, h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+  }
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal {
+  h1, h2, h3, h4 {
+    font-style: italic;
+  }
+
+  section {
+    background-color: $backgroundColor;
+  }
+
+  .row {
+    display: flex;
+  }
+}
